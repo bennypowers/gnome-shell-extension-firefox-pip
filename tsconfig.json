@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "checkJs": true,
+        "declaration": false,
+        "paths": {
+            "*": [
+                "*",
+                "types/*"
+            ]
+        },
+        "target": "ES2018",
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "module": "ES2020",
+        "outDir": "_build",
+        "lib": [
+            "es2017"
+        ],
+        "typeRoots": []
+    }
+}

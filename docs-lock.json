@@ -1,0 +1,211 @@
+[
+    {
+        "name": "cairo",
+        "api_version": "1.0",
+        "c_prefix": [
+            "cairo"
+        ],
+        "path": "/usr/share/gir-1.0/cairo-1.0.gir",
+        "id": "cairo-1.0.gir",
+        "slug": "cairo10"
+    },
+    {
+        "name": "DBus",
+        "api_version": "1.0",
+        "c_prefix": [],
+        "path": "/usr/share/gir-1.0/DBus-1.0.gir",
+        "id": "DBus-1.0.gir",
+        "slug": "dbus10"
+    },
+    {
+        "name": "DBusGLib",
+        "api_version": "1.0",
+        "c_prefix": [],
+        "path": "/usr/share/gir-1.0/DBusGLib-1.0.gir",
+        "id": "DBusGLib-1.0.gir",
+        "slug": "dbusglib10"
+    },
+    {
+        "name": "fontconfig",
+        "api_version": "2.0",
+        "c_prefix": [
+            "fc"
+        ],
+        "path": "/usr/share/gir-1.0/fontconfig-2.0.gir",
+        "id": "fontconfig-2.0.gir",
+        "slug": "fontconfig20"
+    },
+    {
+        "name": "freetype2",
+        "api_version": "2.0",
+        "c_prefix": [
+            "FT"
+        ],
+        "path": "/usr/share/gir-1.0/freetype2-2.0.gir",
+        "id": "freetype2-2.0.gir",
+        "slug": "freetype220"
+    },
+    {
+        "name": "Gio",
+        "api_version": "2.0",
+        "c_prefix": [
+            "g"
+        ],
+        "path": "/usr/share/gir-1.0/Gio-2.0.gir",
+        "id": "Gio-2.0.gir",
+        "slug": "gio20"
+    },
+    {
+        "name": "GIRepository",
+        "api_version": "2.0",
+        "c_prefix": [
+            "g",
+            "gi"
+        ],
+        "path": "/usr/share/gir-1.0/GIRepository-2.0.gir",
+        "id": "GIRepository-2.0.gir",
+        "slug": "girepository20"
+    },
+    {
+        "name": "GL",
+        "api_version": "1.0",
+        "c_prefix": [
+            "gl"
+        ],
+        "path": "/usr/share/gir-1.0/GL-1.0.gir",
+        "id": "GL-1.0.gir",
+        "slug": "gl10"
+    },
+    {
+        "name": "GLib",
+        "api_version": "2.0",
+        "c_prefix": [
+            "g",
+            "glib"
+        ],
+        "path": "/usr/share/gir-1.0/GLib-2.0.gir",
+        "id": "GLib-2.0.gir",
+        "slug": "glib20"
+    },
+    {
+        "name": "GModule",
+        "api_version": "2.0",
+        "c_prefix": [
+            "g"
+        ],
+        "path": "/usr/share/gir-1.0/GModule-2.0.gir",
+        "id": "GModule-2.0.gir",
+        "slug": "gmodule20"
+    },
+    {
+        "name": "GObject",
+        "api_version": "2.0",
+        "c_prefix": [
+            "g"
+        ],
+        "path": "/usr/share/gir-1.0/GObject-2.0.gir",
+        "id": "GObject-2.0.gir",
+        "slug": "gobject20"
+    },
+    {
+        "name": "HarfBuzz",
+        "api_version": "0.0",
+        "c_prefix": [
+            "hb",
+            "hb_gobject"
+        ],
+        "path": "/usr/share/gir-1.0/HarfBuzz-0.0.gir",
+        "id": "HarfBuzz-0.0.gir",
+        "slug": "harfbuzz00"
+    },
+    {
+        "name": "ICal",
+        "api_version": "3.0",
+        "c_prefix": [
+            "ical"
+        ],
+        "path": "/usr/share/gir-1.0/ICal-3.0.gir",
+        "id": "ICal-3.0.gir",
+        "slug": "ical30"
+    },
+    {
+        "name": "ICalGLib",
+        "api_version": "3.0",
+        "c_prefix": [
+            "i_cal"
+        ],
+        "path": "/usr/share/gir-1.0/ICalGLib-3.0.gir",
+        "id": "ICalGLib-3.0.gir",
+        "slug": "icalglib30"
+    },
+    {
+        "name": "libxml2",
+        "api_version": "2.0",
+        "c_prefix": [
+            "xml"
+        ],
+        "path": "/usr/share/gir-1.0/libxml2-2.0.gir",
+        "id": "libxml2-2.0.gir",
+        "slug": "libxml220"
+    },
+    {
+        "name": "Vulkan",
+        "api_version": "1.0",
+        "c_prefix": [
+            "vk"
+        ],
+        "path": "/usr/share/gir-1.0/Vulkan-1.0.gir",
+        "id": "Vulkan-1.0.gir",
+        "slug": "vulkan10"
+    },
+    {
+        "name": "win32",
+        "api_version": "1.0",
+        "c_prefix": [
+            "Win32"
+        ],
+        "path": "/usr/share/gir-1.0/win32-1.0.gir",
+        "id": "win32-1.0.gir",
+        "slug": "win3210"
+    },
+    {
+        "name": "xfixes",
+        "api_version": "4.0",
+        "c_prefix": [
+            "X"
+        ],
+        "path": "/usr/share/gir-1.0/xfixes-4.0.gir",
+        "id": "xfixes-4.0.gir",
+        "slug": "xfixes40"
+    },
+    {
+        "name": "xft",
+        "api_version": "2.0",
+        "c_prefix": [
+            "Xft"
+        ],
+        "path": "/usr/share/gir-1.0/xft-2.0.gir",
+        "id": "xft-2.0.gir",
+        "slug": "xft20"
+    },
+    {
+        "name": "xlib",
+        "api_version": "2.0",
+        "c_prefix": [
+            "X"
+        ],
+        "path": "/usr/share/gir-1.0/xlib-2.0.gir",
+        "id": "xlib-2.0.gir",
+        "slug": "xlib20"
+    },
+    {
+        "name": "xrandr",
+        "api_version": "1.3",
+        "c_prefix": [
+            "XRR"
+        ],
+        "path": "/usr/share/gir-1.0/xrandr-1.3.gir",
+        "id": "xrandr-1.3.gir",
+        "slug": "xrandr13"
+    }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "Firefox PiP Always on Top",
+  "description": "Ensure that Firefox Picture-in-Picture window are always on top",
+  "uuid": "firefox-pip@bennypowers.com",
+  "shell-version": [
+    "42"
+  ]
+}
