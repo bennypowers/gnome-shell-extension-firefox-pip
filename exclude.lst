@@ -1,9 +1,10 @@
 .git/*
 .git/**/*
+.github/*
+.github/**/*
 .gitignore
 node_modules/*
 node_modules/**/*
-types
 types/*
 types/**/*
 package*.json
