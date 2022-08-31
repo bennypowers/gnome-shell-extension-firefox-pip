@@ -27,33 +27,27 @@ function isPiP(window) {
 }
 
 function init() {
-  Extension.prototype.log.call(null, 'initializing');
   return new Extension();
 }
 
 class Extension {
-  /** @param {string} message */
-  log(message) {
-    log(`firefox-pip: ${message}`);
-  }
+  listenerId;
 
   enable() {
-    this.log('enabling');
-    global.display.connect('window-created', (_, window) => void this.onCreated(window));
+    this.listenerId = global.display.connect('window-created', (_, window) =>
+      window.get_compositor_private().connect('realize', () =>
+        void this.onCreated(window)));
   }
 
   disable() {
-    this.log('disabling');
+    global.display.disconnect(this.listenerId);
   }
 
   /**
    * @param {Meta.Window} window
    */
-  async onCreated(window) {
-    // TODO: find out when Meta.Window#get_title() is ready
-    await new Promise(r => setTimeout(r, 10));
+  onCreated(window) {
     if (isPiP(window)) {
-      this.log('found PiP!')
       window.make_above();
       window.stick();
     }

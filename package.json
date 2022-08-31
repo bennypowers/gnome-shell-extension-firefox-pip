@@ -4,6 +4,7 @@
   "description": "",
   "main": "extension.js",
   "scripts": {
+    "build": "rm -f firefox-pip@bennypowers.com.zip && zip -r firefox-pip@bennypowers.com.zip . -x@exclude.lst",
     "typecheck": "tsc",
     "postinstall": "gi-ts config --lock && gi-ts generate",
     "generate": "gi-ts generate",
