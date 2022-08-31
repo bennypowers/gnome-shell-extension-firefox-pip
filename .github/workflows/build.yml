@@ -1,0 +1,26 @@
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build
+      - name: Upload Artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ event.release.upload_url }}
+          asset_path: ./firefox-pip@bennypowers.com.zip
+          asset_name: firefox-pip@bennypowers.com.zip
+          asset_content_type: application/zip
+      - name: Submit extension
+        uses: leandro-hermes/action-upload-file@v1.1.0
+        with:
+          https: true
+          host: extensions.gnome.org
+          path: /upload
+          filePath: ./firefox-pip@bennypowers.com.zip
