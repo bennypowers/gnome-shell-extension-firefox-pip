@@ -16,22 +16,13 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-/* exported init */
-
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-
 /** @param {Meta.Window} window */
 function isPiP(window) {
   return window.get_title() === 'Picture-in-Picture';
 }
 
-function init() {
-  return new Extension();
-}
-
 class Extension {
-  listenerId;
+  listenerId = 0;
 
   enable() {
     this.listenerId = global.display.connect('window-created', (_, window) =>
@@ -53,3 +44,9 @@ class Extension {
     }
   }
 }
+
+/* exported init */
+function init() {
+  return new Extension();
+}
+
