@@ -3,8 +3,9 @@
   "uuid": "firefox-pip@bennypowers.com",
   "description": "Ensure that Firefox Picture-in-Picture window are always on top",
   "shell-version": [
-    "42"
+    "42",
+    "43"
   ],
   "url": "https://github.com/bennypowers/gnome-shell-extension-firefox-pip",
-  "version": 1
+  "version": 3
 }
