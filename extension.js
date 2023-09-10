@@ -16,12 +16,14 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-/** @param {Meta.Window} window */
-function isPiP(window) {
-  return window.get_title() === 'Picture-in-Picture';
-}
+import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-class Extension {
+export default class FirefoxPIPExtension extends Extension {
+  /** @param {Meta.Window} window */
+  static isPiP(window) {
+    return window.get_title() === 'Picture-in-Picture';
+  }
+
   listenerId = 0;
 
   enable() {
@@ -38,15 +40,10 @@ class Extension {
    * @param {Meta.Window} window
    */
   onCreated(window) {
-    if (isPiP(window)) {
+    if (FirefoxPIPExtension.isPiP(window)) {
       window.make_above();
       window.stick();
     }
   }
-}
-
-/* exported init */
-function init() {
-  return new Extension();
 }
 
