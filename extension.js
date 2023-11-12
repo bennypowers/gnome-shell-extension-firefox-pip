@@ -21,7 +21,15 @@ import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 export default class FirefoxPIPExtension extends Extension {
   /** @param {Meta.Window} window */
   static isPiP(window) {
-    return window.get_title() === 'Picture-in-Picture';
+    let locale = GLib.spawn_command_line_sync('/bin/bash -c "locale | grep LANG | cut -d\'=\' -f 2 | cut -d\'.\' -f 1"')[1];
+    switch (locale) {
+        case : 'ru_RU':
+            return window.get_title() === 'Картинка в картинке';
+            break;
+        default: 
+            return window.get_title() === 'Picture-in-picture';
+            break;
+    }
   }
 
   listenerId = 0;
