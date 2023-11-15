@@ -22,12 +22,19 @@ export default class FirefoxPIPExtension extends Extension {
   /** @param {Meta.Window} window */
   static isPiP(window) {
     let locale = GLib.spawn_command_line_sync('/bin/bash -c "locale | grep LANG | cut -d\'=\' -f 2 | cut -d\'.\' -f 1"')[1];
+    const title = window.get_title();
     switch (locale) {
-        case : 'ru_RU':
-            return window.get_title() === 'Картинка в картинке';
+        case: 'uk_UA':
+            return title === 'Зображення в зображенні'
+            break;
+        case: 'ru_RU':
+            return title === 'Картинка в картинке';
+            break;
+        case 'he_IL':
+            return title === 'תמונה בתוך תמונה'
             break;
         default: 
-            return window.get_title() === 'Picture-in-picture';
+            return title === 'Picture-in-picture';
             break;
     }
   }
