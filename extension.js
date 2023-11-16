@@ -18,25 +18,20 @@
 
 import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
+import _GLib from 'gi://GLib';
+/** @type {import('@girs/glib-2.0')} */
+const GLib = _GLib;
+
+import { locales } from './lib/locales.js';
+
 export default class FirefoxPIPExtension extends Extension {
-  /** @param {Meta.Window} window */
+  /** @param {import('@girs/meta-13').Window} window */
   static isPiP(window) {
-    let locale = GLib.spawn_command_line_sync('/bin/bash -c "locale | grep LANG | cut -d\'=\' -f 2 | cut -d\'.\' -f 1"')[1];
     const title = window.get_title();
-    switch (locale) {
-        case: 'uk_UA':
-            return title === 'Зображення в зображенні'
-            break;
-        case: 'ru_RU':
-            return title === 'Картинка в картинке';
-            break;
-        case 'he_IL':
-            return title === 'תמונה בתוך תמונה'
-            break;
-        default: 
-            return title === 'Picture-in-picture';
-            break;
-    }
+    let l10nTitle
+    for (const lang of GLib.get_language_names())
+      l10nTitle ??= locales.get(lang);
+    return title === l10nTitle;
   }
 
   listenerId = 0;
@@ -51,9 +46,7 @@ export default class FirefoxPIPExtension extends Extension {
     global.display.disconnect(this.listenerId);
   }
 
-  /**
-   * @param {Meta.Window} window
-   */
+  /** @param {import('@girs/meta-13').Window} window */
   onCreated(window) {
     if (FirefoxPIPExtension.isPiP(window)) {
       window.make_above();
