@@ -1,23 +1,21 @@
 {
-    "compilerOptions": {
-        "experimentalDecorators": true,
-        "allowJs": true,
-        "checkJs": true,
-        "declaration": false,
-        "paths": {
-            "*": [
-                "*",
-                "types/*"
-            ]
-        },
-        "target": "ES2018",
-        "baseUrl": ".",
-        "moduleResolution": "node",
-        "module": "ES2020",
-        "outDir": "_build",
-        "lib": [
-            "es2017"
-        ],
-        "typeRoots": []
-    }
+  "include": [
+    "@girs/glib-2/ambient",
+    "@girs/gjs",
+    "@girs/gjs/ambient"
+  ],
+  "files": [
+    "lib/**/*",
+    "extension.js",
+    "prefs.js",
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["ESNext"],
+    "types": [],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext"
+  }
 }
