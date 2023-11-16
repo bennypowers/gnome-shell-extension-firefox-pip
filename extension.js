@@ -27,11 +27,13 @@ import { locales } from './lib/locales.js';
 export default class FirefoxPIPExtension extends Extension {
   /** @param {import('@girs/meta-13').Window} window */
   static isPiP(window) {
-    const title = window.get_title();
-    let l10nTitle
-    for (const lang of GLib.get_language_names())
-      l10nTitle ??= locales.get(lang);
-    return title === l10nTitle;
+    if (window.get_wm_class() === 'firefox' || window.get_sandboxed_app_id() === 'firefox') {
+      const title = window.get_title();
+      for (const lang of GLib.get_language_names())
+        if (title === locales.get(lang))
+          return true;
+    }
+    return false;
   }
 
   listenerId = 0;
@@ -49,6 +51,7 @@ export default class FirefoxPIPExtension extends Extension {
   /** @param {import('@girs/meta-13').Window} window */
   onCreated(window) {
     if (FirefoxPIPExtension.isPiP(window)) {
+      window.raise_and_make_recent();
       window.make_above();
       window.stick();
     }

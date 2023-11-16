@@ -5,16 +5,11 @@
   "main": "extension.js",
   "scripts": {
     "build": "rm -f firefox-pip@bennypowers.com.zip && zip -r firefox-pip@bennypowers.com.zip . -x@exclude.lst",
-    "typecheck": "tsc",
-    "postinstall": "gi-ts config --lock && gi-ts generate",
-    "generate": "gi-ts generate",
-    "generate:dts:standard": "gi-ts generate --out=./types",
-    "config": "gi-ts config"
+    "typecheck": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gi.ts/cli": "^1.5.10",
     "eslint": "^8.22.0",
     "typescript": "^4.7.4"
   },
