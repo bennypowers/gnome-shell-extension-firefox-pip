@@ -27,7 +27,7 @@ import { locales } from './lib/locales.js';
 export default class FirefoxPIPExtension extends Extension {
   /** @param {import('@girs/meta-13').Window} window */
   static isPiP(window) {
-    if (window.get_wm_class() === 'firefox' || window.get_sandboxed_app_id() === 'firefox') {
+    if (window.get_wm_class().match(/firefox/) || window.get_sandboxed_app_id().match(/firefox/)) {
       const title = window.get_title();
       for (const lang of GLib.get_language_names())
         if (title === locales.get(lang))
