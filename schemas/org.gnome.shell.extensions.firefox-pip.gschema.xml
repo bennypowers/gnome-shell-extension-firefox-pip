@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema id="org.gnome.shell.extensions.firefox-pip" path="/org/gnome/shell/extensions/firefox-pip/">
+        <key name="always-on-top" type="b">
+            <default>true</default>
+        </key>
+        <key name="always-on-visible-workspace" type="b">
+            <default>true</default>
+        </key>
+        <key name="remember-position" type="b">
+            <default>false</default>
+        </key>
+        <key name="enable-custom-position" type="b">
+            <default>false</default>
+        </key>
+        <key name="custom-position-x" type="u">
+            <default>50</default>
+        </key>
+        <key name="custom-position-y" type="u">
+            <default>100</default>
+        </key>
+        <key name="saved-position-x" type="u">
+            <default>0</default>
+        </key>
+        <key name="saved-position-y" type="u">
+            <default>0</default>
+        </key>
+    </schema>
+</schemalist>

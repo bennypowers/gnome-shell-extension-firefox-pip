@@ -6,5 +6,6 @@
     "45"
   ],
   "url": "https://github.com/bennypowers/gnome-shell-extension-firefox-pip",
+  "settings-schema": "org.gnome.shell.extensions.firefox-pip",
   "version": 6
 }

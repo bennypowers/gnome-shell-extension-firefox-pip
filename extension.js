@@ -39,6 +39,8 @@ export default class FirefoxPIPExtension extends Extension {
   listenerId = 0;
 
   enable() {
+    this._settings = this.getSettings();
+
     this.listenerId = global.display.connect('window-created', (_, window) =>
       window.get_compositor_private().connect('realize', () =>
         void this.onCreated(window)));
@@ -52,9 +54,31 @@ export default class FirefoxPIPExtension extends Extension {
   onCreated(window) {
     if (FirefoxPIPExtension.isPiP(window)) {
       window.raise_and_make_recent();
-      window.make_above();
-      window.stick();
+
+      if (this._settings.get_boolean("remember-position")) {
+        window.connect('unmanaged', () => {
+          this.onClosed(window);
+        });
+
+        window.move_frame(false, this._settings.get_uint("saved-position-x"), this._settings.get_uint("saved-position-y"));
+      }
+      else if (this._settings.get_boolean("enable-custom-position")) {
+        window.move_frame(false, this._settings.get_uint("custom-position-x"), this._settings.get_uint("custom-position-y"));
+      }
+
+      if (this._settings.get_boolean("always-on-top")) {
+        window.make_above();
+      }
+      if (this._settings.get_boolean("always-on-visible-workspace")) {
+        window.stick();
+      }
     }
+  }
+
+  /** @param {import('@girs/meta-13').Window} window */
+  onClosed(window) {
+    this._settings.set_uint("saved-position-x", window.get_frame_rect().x);
+    this._settings.set_uint("saved-position-y", window.get_frame_rect().y);
   }
 }
 
